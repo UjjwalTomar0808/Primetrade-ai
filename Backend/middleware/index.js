@@ -30,9 +30,9 @@ export const globalMiddleware = (app) => {
   // Routes middleware
   appRoutesMiddleware(app);
 
-  // Error handling middleware (must be last)
-  app.use(notFoundHandler);
-  app.use(errorHandler);
+  // Error handling middleware (moved to index.js to be after static serving)
+  // app.use(notFoundHandler);
+  // app.use(errorHandler);
 };
 
 const appRoutesMiddleware = (app) => {
