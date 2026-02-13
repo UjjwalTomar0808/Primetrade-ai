@@ -16,7 +16,7 @@ export const globalMiddleware = (app) => {
   // CORS middleware
   app.use(
     cors({
-      origin: ENV_CONFIG.CORS_ORIGIN || "http://localhost:3000",
+      origin: ENV_CONFIG.CORS_ORIGIN || "http://localhost:5173",
       credentials: true,
     })
   );
@@ -36,8 +36,8 @@ export const globalMiddleware = (app) => {
 };
 
 const appRoutesMiddleware = (app) => {
-  // Server running status check route
-  app.get("/", (req, res) => {
+  // Server health check route
+  app.get("/api/health", (req, res) => {
     res.json({
       success: true,
       message: "Backend API is running",
