@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --color-bg-main: #EFECE7;
+    --color-bg-light: #F7F6F4;
+    --color-card-bg: #FFFFFF;
+    --color-accent: #DED8CE;
+
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #6F6F6F;
+    --color-text-muted: #9E9E9E;
+
+    --color-btn-primary: #1A1A1A;
+    --color-btn-text: #FFFFFF;
+
+    --color-footer-bg: #222222;
+
+    --shadow-plush: 0 8px 30px rgb(0 0 0 / 0.04);
+    --radius-plush: 32px;
+}
+
+body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    /* antialiased; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+.btn-primary {
+    @apply bg-btn-primary text-btn-text rounded-full px-8 py-3 font-medium transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-black/5;
+}
+
+.card-plush {
+    @apply bg-card-bg rounded-[var(--radius-plush)] p-8 shadow-plush border border-accent/30;
+}
+
+.input-plush {
+    @apply w-full bg-bg-light border border-accent rounded-full px-6 py-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-black/5 transition-all;
+}
